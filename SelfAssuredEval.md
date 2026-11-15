@@ -449,7 +449,7 @@ Decided with Amal on 2026-11-15.
 
 - Who it's for: friends taking it for fun and sharing it, and a portfolio piece. Credibility is the point, so it uses validated scales and gives honest scores, with no named "types".
 - "Self-assured" means four parts:
-  - Self-worth: the Rosenberg Self-Esteem Scale, all 10 items, on its native 4-point agree/disagree scale (Rosenberg 1965; public domain per UMD Sociology).
+  - Self-worth: the Rosenberg Self-Esteem Scale, all 10 items, on a 5-point agree/disagree scale: the published 4 points plus a neutral middle, added at Amal's request on 2026-11-15 (Rosenberg 1965; public domain per UMD Sociology; 5 points favoured by Donnellan & Rakhshani 2023).
   - Handling things: IPIP-NEO-120 Self-Efficacy (C1), 4 items.
   - Speaking up: IPIP-NEO-120 Assertiveness (E3), 4 items.
   - Steadiness: IPIP-NEO-120 Vulnerability (N6), 4 items, reversed.
@@ -492,6 +492,7 @@ CHANGELOG:
 - 2026-11-15 — created
 - 2026-11-15 — filled in DEFINITIONS AND DEFERRED and OPEN QUESTIONS / ASSUMPTIONS after the first round of questions
 - 2026-11-15 — published to GitHub (amalmehta/SelfAssured) and GitHub Pages
+- 2026-11-15 — added a neutral middle to the Rosenberg answers (now 5 points, like IPIP)
 - 2026-11-15 — built v1: a static survey site (22 items, four parts), scoring tests, docs; fonts self-hosted
 - 2026-09-15 — added meta-instruction: built-out applications include a small feedback tab
 - 2026-09-15 — added meta-instruction: no "Claude" attribution in commits, PRs, or branches

@@ -16,12 +16,12 @@ Then open http://localhost:8743.
 npm test
 ```
 
-This runs Node's built-in test runner on `tests/scoring.test.mjs` (11 tests: item counts, reverse keys, extremes, the steadiness flip, the overall average, missing answers, and the plain-words descriptions). It needs no npm install.
+This runs Node's built-in test runner on `tests/scoring.test.mjs` (12 tests: item counts, the 5-point answers with a neutral middle, reverse keys, extremes, the steadiness flip, the overall average, missing answers, and the plain-words descriptions). It needs no npm install.
 
 ## Use
 
 - **Start:** click Start or press Enter.
-- **Answer:** click or tap an option, or press 1–4 (Rosenberg) or 1–5 (IPIP). It moves on by itself.
+- **Answer:** click or tap an option, or press 1–5. It moves on by itself.
 - **Back:** press ← or click Back. Earlier answers are kept.
 - **Results:** open any part to see what it measures, what it doesn't, its reliability, and each statement next to your answer.
 - **Save image** downloads a PNG of your result card. **Retake** starts over.

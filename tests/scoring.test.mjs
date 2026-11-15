@@ -40,16 +40,29 @@ test('all least-confident answers → 0 everywhere', () => {
 });
 
 test('reverse keying: Strongly agree on "I am a failure" scores 0 on that item', () => {
-  assert.equal(keyed(3, -1, SCALES.rosenberg), 0);
-  assert.equal(keyed(0, -1, SCALES.rosenberg), 3);
+  assert.equal(keyed(4, -1, SCALES.rosenberg), 0);
+  assert.equal(keyed(0, -1, SCALES.rosenberg), 4);
   assert.equal(keyed(5, -1, SCALES.ipip), 1);
 });
 
-test('Rosenberg sum matches UMD 0–30 scoring, scaled to 0–100', () => {
-  // Agree (2) to every item: positives give 2 each (5×2=10), reversed give 1 each (5×1=5) → 15/30 = 50.
+test('Rosenberg on 5 points: Agree to everything → 50, neutral to everything → 50', () => {
+  // Agree (3) to every item: positives give 3 each (15), reversed give 1 each (5) → 20/40 = 50.
   const a = {};
-  for (const it of ITEMS) a[it.id] = it.part === 'worth' ? 2 : 3;
+  for (const it of ITEMS) a[it.id] = 3;
   assert.equal(scorePart('worth', a), 50);
+  for (const it of ITEMS) if (it.part === 'worth') a[it.id] = 2;
+  assert.equal(scorePart('worth', a), 50);
+  // Agree on positives, Disagree on reversed → keyed 3 each → 75.
+  for (const it of ITEMS) if (it.part === 'worth') a[it.id] = it.key === 1 ? 3 : 1;
+  assert.equal(scorePart('worth', a), 75);
+});
+
+test('every scale has 5 answers with a neutral middle', () => {
+  for (const s of Object.values(SCALES)) {
+    assert.equal(s.options.length, 5);
+    assert.match(s.options[2].label, /^Neither/);
+    assert.equal(s.options[2].value, (s.min + s.max) / 2);
+  }
 });
 
 test('steadiness flips vulnerability: panicking easily lowers steadiness', () => {

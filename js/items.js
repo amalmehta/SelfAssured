@@ -8,15 +8,18 @@ export const SCALES = {
   rosenberg: {
     name: 'Rosenberg Self-Esteem Scale',
     instruction: 'Below is a list of statements dealing with your general feelings about yourself. Pick how strongly you agree or disagree with each.',
-    // Value per answer for a positively keyed item (UMD scoring: SA=3 … SD=0).
+    // Value per answer for a positively keyed item. The published scale has 4 points
+    // (UMD scoring: SA=3 … SD=0); a neutral middle is added here, so SA=4 … SD=0.
+    // Donnellan & Rakhshani (2023, Assessment) tested Rosenberg formats and favour 5 points.
     options: [
-      { label: 'Strongly agree', value: 3 },
-      { label: 'Agree', value: 2 },
+      { label: 'Strongly agree', value: 4 },
+      { label: 'Agree', value: 3 },
+      { label: 'Neither agree nor disagree', value: 2 },
       { label: 'Disagree', value: 1 },
       { label: 'Strongly disagree', value: 0 },
     ],
     min: 0,
-    max: 3,
+    max: 4,
     citation: 'Rosenberg, M. (1965). Society and the Adolescent Self-Image. Princeton University Press.',
     source: 'https://socy.umd.edu/about-us/using-rosenberg-self-esteem-scale',
     license: 'Public domain, per the University of Maryland Department of Sociology.',
@@ -48,7 +51,7 @@ export const PARTS = {
     short: 'Feeling you are fine as you are.',
     measures: 'How much you value yourself overall: the 10-item Rosenberg Self-Esteem Scale, a long-standing and widely used self-esteem measure.',
     doesNot: 'It isn’t how good you are at things, and it isn’t how others see you. A high score isn’t arrogance; the scale asks about worth, not superiority.',
-    reliability: 'Cronbach’s α .77–.88 across samples (UMD Sociology).',
+    reliability: 'Cronbach’s α .77–.88 across samples (UMD Sociology), on the original 4-point answers. This survey adds a neutral middle; studies comparing 4 to 7 answer points found reliability about the same.',
   },
   efficacy: {
     name: 'Handling things',

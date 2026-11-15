@@ -18,3 +18,13 @@
 2. "Yes, publish"
 
    Created the public repo amalmehta/SelfAssured, pushed `main`, enabled GitHub Pages (served at https://amalmehta.com/SelfAssured/) with HTTPS enforced, and checked the live site.
+
+3. "open latest"
+
+   Opened the live site in the browser pane.
+
+4. "there needs to be a neutral + more nuance to the options"
+
+   Only the 10 Rosenberg questions lacked a neutral; the 12 IPIP questions already had 5 points. After checking studies of answer formats (Donnellan & Rakhshani 2023 favour 5 points for Rosenberg; 4 to 7 points give about the same reliability), the choice offered was 5 points for all or 7 points for all. Amal picked 5 points for all, so Rosenberg gained "Neither agree nor disagree".
+
+5. "Yes, push"

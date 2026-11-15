@@ -37,7 +37,7 @@ Part score, from 0 to 100:
 
 score = (mean item value after reverse-keying − scale min) / (scale max − scale min) × 100
 
-- Rosenberg answers are worth 0–3; IPIP answers are worth 1–5.
+- Rosenberg answers are worth 0–4; IPIP answers are worth 1–5. Both have five answers with a neutral middle.
 - Steadiness = 100 − Vulnerability.
 - Overall = the average of the four parts. This is our own composite, not a published one.
 
@@ -60,7 +60,7 @@ score = (mean item value after reverse-keying − scale min) / (scale max − sc
 ## Key decisions and trade-offs
 
 - **Validated scales over custom items.** The score means something and can be cited, at the cost of fixed, somewhat stiff wording.
-- **Native answer formats (4-point and 5-point).** This keeps the published reliability numbers meaningful, at the cost of answer labels that change between the two blocks.
+- **Five answers with a neutral middle everywhere.** IPIP is natively 5-point. Rosenberg is published as 4-point; we add "Neither agree nor disagree" so nobody is forced to pick a side. Donnellan & Rakhshani (2023) compared Rosenberg formats and favour 5 points, and studies of 4–7 points found reliability about the same. The cost: the published Rosenberg alphas were measured on 4 points, so the site says so. The answer wording still changes between the two blocks (agree vs accurate).
 - **No norms.** We can't honestly say "higher than 70% of people" without a reference sample, so the scores are positions on each scale, not percentiles.
 - **No build step.** Plain ES modules are the fewest moving parts. The trade-off is no TypeScript checking.
 - **MathML instead of KaTeX.** Browsers typeset it natively, so no extra download is needed.
