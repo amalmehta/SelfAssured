@@ -16,7 +16,7 @@ A 3-minute survey of how self-assured you are, across four parts: self-worth, ha
 
 Scores run from 0 to 100 and show where you sit on each scale. They are **not** percentiles: there's no comparison with other people.
 
-- **Try it:** https://amalmehta.github.io/SelfAssured/
+- **Try it:** https://amalmehta.com/SelfAssured/
 - [Setup, running and the manual review checklist](docs/INSTRUCTIONS.md)
 - [System design and threat model](docs/SYSTEM-DESIGN.md)
 - [What's where](docs/FILE-STRUCTURE.md)
