@@ -14,3 +14,7 @@
    - Done criteria and deferrals confirmed.
 
    Then the build: the static site, the scoring tests, browser walkthroughs in light and dark at desktop and phone width, and a Lighthouse pass (accessibility 100). Fonts were self-hosted after Lighthouse flagged them, and the docs were written.
+
+2. "Yes, publish"
+
+   Created the public repo amalmehta/SelfAssured, pushed `main`, enabled GitHub Pages (served at https://amalmehta.com/SelfAssured/) with HTTPS enforced, and checked the live site.

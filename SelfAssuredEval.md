@@ -468,7 +468,7 @@ Decided with Amal on 2026-11-15.
   - The opening animation takes ≤ 1 s, and is a plain fade with Reduce Motion on.
   - Settings cover theme and motion. Feedback goes to GitHub Issues.
 - Look: concept A, Editorial (one question per screen, a serif question, a stacked answer list).
-- Hosting: a public GitHub repo, "SelfAssured", served by GitHub Pages.
+- Hosting: the public GitHub repo amalmehta/SelfAssured, served by GitHub Pages at https://amalmehta.com/SelfAssured/ (custom domain inherited from the user site, HTTPS enforced).
 - Deferred:
   - Percentiles and norms (these need a real reference sample).
   - Named types.
@@ -491,7 +491,8 @@ CHANGELOG:
 
 - 2026-11-15 — created
 - 2026-11-15 — filled in DEFINITIONS AND DEFERRED and OPEN QUESTIONS / ASSUMPTIONS after the first round of questions
-- 2026-11-15 — built v1: a static survey site (22 items, four parts), scoring tests, docs; fonts self-hosted; not yet pushed to GitHub
+- 2026-11-15 — published to GitHub (amalmehta/SelfAssured) and GitHub Pages
+- 2026-11-15 — built v1: a static survey site (22 items, four parts), scoring tests, docs; fonts self-hosted
 - 2026-09-15 — added meta-instruction: built-out applications include a small feedback tab
 - 2026-09-15 — added meta-instruction: no "Claude" attribution in commits, PRs, or branches
 - 2026-09-16 — added meta-instruction: always include a README when adding to GitHub
