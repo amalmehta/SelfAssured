@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Self Assured</title>
+<meta name="description" content="A 3-minute survey of four parts of self-assuredness, built from published, public-domain scales. Your answers never leave your browser.">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<meta name="theme-color" content="#f7f3ec" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1c1a18" media="(prefers-color-scheme: dark)">
+<link rel="preload" href="assets/fonts/Inter.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/Newsreader.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<script>
+  // Apply saved theme/motion before first paint so there is no flash.
+  try {
+    const s = JSON.parse(localStorage.getItem('sa-settings') || '{}');
+    if (s.theme && s.theme !== 'system') document.documentElement.dataset.theme = s.theme;
+    if (s.motion && s.motion !== 'system') document.documentElement.dataset.motion = s.motion;
+  } catch (e) {}
+</script>
+<script type="module" src="js/app.js"></script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-worth" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></symbol>
+  <symbol id="i-efficacy" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="m8.5 12.2 2.4 2.4 4.8-5"/></symbol>
+  <symbol id="i-assert" viewBox="0 0 24 24"><path d="M5 6.5A2.5 2.5 0 0 1 7.5 4h9A2.5 2.5 0 0 1 19 6.5v6a2.5 2.5 0 0 1-2.5 2.5H11l-4 4v-4h0.5A2.5 2.5 0 0 1 5 12.5z"/></symbol>
+  <symbol id="i-steady" viewBox="0 0 24 24"><path d="M3 19 9.5 8l3.5 6 2-3 6 8z"/></symbol>
+  <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></symbol>
+  <symbol id="i-back" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></symbol>
+  <symbol id="i-save" viewBox="0 0 24 24"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 19h14"/></symbol>
+  <symbol id="i-redo" viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5M4 4v4.5h4.5"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></symbol>
+</svg>
+
+<header class="bar">
+  <a class="brand" href="./" aria-label="Self Assured, start over">
+    <img class="mark" src="assets/icon.svg" alt="" width="30" height="30">
+    <span>Self Assured</span>
+  </a>
+  <button class="icon-btn" id="open-settings" aria-label="Settings (⌘,)" title="Settings (⌘,)"><svg><use href="#i-gear"/></svg></button>
+</header>
+
+<main id="stage" aria-live="polite">
+  <!-- Intro -->
+  <section id="intro" class="screen">
+    <img class="hero-mark" src="assets/icon.svg" alt="" width="84" height="84">
+    <h1>How self-assured are you?</h1>
+    <p class="lede">22 short questions from two published scales, scored across four parts. About three minutes.</p>
+    <ul class="parts-preview" id="parts-preview"></ul>
+    <button class="primary" id="start">Start <kbd>Enter</kbd></button>
+    <p class="quiet"><svg class="ic"><use href="#i-lock"/></svg> Your answers stay in this tab. Nothing is saved or sent.</p>
+    <details class="fold">
+      <summary>Where the questions come from</summary>
+      <div id="sources-intro"></div>
+    </details>
+  </section>
+
+  <!-- Question -->
+  <section id="quiz" class="screen" hidden>
+    <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="22" id="progress"><i></i></div>
+    <div class="q-meta"><span id="q-count"></span><span class="dot">·</span><span id="q-part"></span></div>
+    <div class="q-wrap" id="q-wrap">
+      <p class="q-instr" id="q-instr"></p>
+      <h2 class="q-text" id="q-text"></h2>
+      <div class="options" id="options" role="radiogroup"></div>
+    </div>
+    <div class="q-foot">
+      <button class="ghost" id="back"><svg class="ic"><use href="#i-back"/></svg> Back <kbd>←</kbd></button>
+      <span class="quiet" id="key-hint">Keys 1–4 answer</span>
+    </div>
+  </section>
+
+  <!-- Switch between scales -->
+  <section id="switch" class="screen" hidden>
+    <p class="eyebrow">Part two · 12 to go</p>
+    <h2 class="serif">The answers change now</h2>
+    <p class="lede">The next 12 are short phrases from the International Personality Item Pool. Instead of agreeing, you'll say how <em>accurately</em> each one describes you.</p>
+    <p class="example">For example, if the phrase were <span class="serif">“Enjoy long walks.”</span> and you mostly do, you would pick <strong>Moderately accurate</strong>. (This example isn’t one of the questions.)</p>
+    <div class="row">
+      <button class="ghost" id="switch-back"><svg class="ic"><use href="#i-back"/></svg> Back</button>
+      <button class="primary" id="switch-go">Continue <kbd>Enter</kbd></button>
+    </div>
+  </section>
+
+  <!-- Results -->
+  <section id="results" class="screen" hidden>
+    <p class="eyebrow">Your result</p>
+    <div class="overall">
+      <span class="big" id="overall">0</span><span class="of">/ 100</span>
+    </div>
+    <p class="lede" id="overall-note">The average of your four parts. It shows where you sit on these scales, not how you compare with other people.</p>
+    <ul class="result-rows" id="rows"></ul>
+    <div class="row actions">
+      <button class="primary" id="save"><svg class="ic"><use href="#i-save"/></svg> Save image</button>
+      <button class="ghost" id="retake"><svg class="ic"><use href="#i-redo"/></svg> Retake</button>
+    </div>
+    <details class="fold">
+      <summary>How the scores are worked out</summary>
+      <div class="method">
+        <p>Each part score is the average of your answers in that part, stretched onto 0–100:</p>
+        <math display="block" class="eq">
+          <mi>S</mi><mo>=</mo>
+          <mfrac>
+            <mrow><mover><mi>x</mi><mo>‾</mo></mover><mo>−</mo><msub><mi>x</mi><mi>min</mi></msub></mrow>
+            <mrow><msub><mi>x</mi><mi>max</mi></msub><mo>−</mo><msub><mi>x</mi><mi>min</mi></msub></mrow>
+          </mfrac>
+          <mo>×</mo><mn>100</mn>
+        </math>
+        <dl class="symbols">
+          <dt><math><mi>S</mi></math></dt><dd>the part score, 0 to 100 (no units)</dd>
+          <dt><math><mover><mi>x</mi><mo>‾</mo></mover></math></dt><dd>your average answer in that part, after flipping reversed statements</dd>
+          <dt><math><msub><mi>x</mi><mi>min</mi></msub><mo>,</mo><msub><mi>x</mi><mi>max</mi></msub></math></dt><dd>the lowest and highest answer values: 0 and 3 for Rosenberg, 1 and 5 for IPIP</dd>
+        </dl>
+        <p><strong>In plain words:</strong> 0 means you chose the least confident answer every time, 100 means the most confident every time, and 50 is the middle of the scale. Fifty is <em>not</em> the average person.</p>
+        <p><strong>Flipped statements.</strong> Some statements point the other way, like “I certainly feel useless at times.” Strongly agreeing with one of those counts as the least confident answer. Mixing directions stops people scoring high just by agreeing with everything.</p>
+        <p><strong>Steadiness</strong> is 100 minus the IPIP Vulnerability score, so that higher always means more self-assured. <strong>Overall</strong> is the plain average of the four parts. That average is our choice, not a published measure.</p>
+        <p class="estimate"><span class="tag">Estimate</span> The three short parts have only 4 questions each, so small differences are noise. Treat gaps of under about 10 points as “about the same”. That 10 is our rough guide, not a figure from the papers.</p>
+      </div>
+    </details>
+    <details class="fold">
+      <summary>Sources</summary>
+      <div id="sources-results"></div>
+    </details>
+    <p class="quiet care">This is a reflection tool, not a diagnosis. If a low score stings, that's worth talking over with someone you trust.</p>
+  </section>
+</main>
+
+<a class="feedback-tab" id="feedback" href="https://github.com/amalmehta/SelfAssured/issues/new" target="_blank" rel="noopener"><svg class="ic"><use href="#i-chat"/></svg> Feedback</a>
+
+<dialog id="settings" aria-labelledby="settings-title">
+  <form method="dialog">
+    <h2 id="settings-title" class="serif">Settings</h2>
+    <fieldset>
+      <legend>Theme</legend>
+      <div class="seg" data-setting="theme">
+        <label><input type="radio" name="theme" value="system"> System</label>
+        <label><input type="radio" name="theme" value="light"> Light</label>
+        <label><input type="radio" name="theme" value="dark"> Dark</label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Motion</legend>
+      <div class="seg" data-setting="motion">
+        <label><input type="radio" name="motion" value="system"> System</label>
+        <label><input type="radio" name="motion" value="reduce"> Reduced</label>
+        <label><input type="radio" name="motion" value="full"> Full</label>
+      </div>
+    </fieldset>
+    <div class="privacy">
+      <h3>What's stored</h3>
+      <p>Only these two settings, in this browser's local storage. Your answers live in memory and are gone when you close the tab. No accounts, no analytics, no server, and no requests to anyone else: even the fonts are served from this site.</p>
+      <button type="button" class="ghost small" id="clear-settings">Delete saved settings</button>
+    </div>
+    <div class="row end"><button class="primary" value="close">Done</button></div>
+  </form>
+</dialog>
+</body>
+</html>

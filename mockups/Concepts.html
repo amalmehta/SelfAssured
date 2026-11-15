@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Three Looks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f3ec;--card:#fffdf9;--ink:#2b2724;--mute:#7a716a;--line:#e6ddd1;--blue:#4f6d8a;--terra:#c0714f;--blue-soft:#dde6ee;}
+@media (prefers-color-scheme:dark){:root{--bg:#1c1a18;--card:#252220;--ink:#ece6de;--mute:#a39a91;--line:#3a3531;--blue:#8aa6c1;--terra:#d38b6b;--blue-soft:#2e3842;}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 Inter,system-ui,sans-serif;padding:32px 16px}
+h1{font:500 30px Newsreader,serif;margin:0 0 4px;text-align:center}
+.sub{color:var(--mute);text-align:center;margin:0 0 32px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;max-width:1150px;margin:auto}
+.label{font-weight:600;margin:0 0 8px}.label span{color:var(--mute);font-weight:400}
+.frame{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px 24px;min-height:430px;display:flex;flex-direction:column}
+.note{color:var(--mute);font-size:13px;margin-top:10px}
+/* A editorial */
+.a .prog{height:2px;background:var(--line);border-radius:2px;margin-bottom:6px}.a .prog i{display:block;height:100%;width:38%;background:var(--blue);border-radius:2px}
+.a .step{font-size:12px;color:var(--mute);letter-spacing:.04em}
+.a q{display:block;font:400 26px/1.3 Newsreader,serif;margin:56px 0 40px;quotes:none}
+.a .opts{display:flex;flex-direction:column;gap:8px;margin-top:auto}
+.a .opts div{border:1px solid var(--line);border-radius:10px;padding:10px 14px}
+.a .opts .on{border-color:var(--blue);background:var(--blue-soft)}
+/* B circles */
+.b .top{display:flex;justify-content:space-between;font-size:12px;color:var(--mute)}
+.b q{display:block;font:500 22px/1.35 Inter,sans-serif;text-align:center;margin:64px 8px 48px;quotes:none}
+.b .scale{display:flex;align-items:center;justify-content:space-between;gap:6px}
+.b .scale b{border-radius:50%;border:2px solid;display:block}
+.b .ends{display:flex;justify-content:space-between;font-size:12px;color:var(--mute);margin-top:12px}
+.b .dots{display:flex;gap:4px;justify-content:center;margin-top:auto}.b .dots i{width:6px;height:6px;border-radius:50%;background:var(--line)}.b .dots .d{background:var(--blue)}
+/* C sections */
+.c{flex-direction:row;gap:18px}
+.c nav{width:92px;font-size:12px;color:var(--mute);border-right:1px solid var(--line);padding-right:12px}
+.c nav div{padding:6px 0}.c nav .cur{color:var(--ink);font-weight:600}.c nav .cur::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--terra);margin-right:6px;vertical-align:middle}
+.c main{flex:1;display:flex;flex-direction:column}
+.c h3{font:500 20px Newsreader,serif;margin:0 0 4px}.c .why{font-size:13px;color:var(--mute);margin:0 0 18px}
+.c .row{border-top:1px solid var(--line);padding:12px 0}.c .row p{margin:0 0 8px;font-size:14px}
+.c .seg{display:flex;gap:4px}.c .seg i{flex:1;height:22px;border-radius:6px;border:1px solid var(--line)}.c .seg .on{background:var(--blue);border-color:var(--blue)}
+</style>
+</head>
+<body>
+<h1>Three looks for the survey</h1>
+<p class="sub">Each one shows the question screen. All three are warm, light and calm, with dark mode supported.</p>
+<div class="grid">
+ <div>
+  <p class="label">A · Editorial <span>— one question, a serif, a list of answers</span></p>
+  <div class="frame a">
+   <div class="prog"><i></i></div><div class="step">10 of 26 · Self-worth</div>
+   <q>On the whole, I am satisfied with myself.</q>
+   <div class="opts"><div>Strongly agree</div><div class="on">Agree</div><div>Disagree</div><div>Strongly disagree</div></div>
+  </div>
+  <p class="note">Reads like a magazine page, and the answers are big, easy targets on a phone. The calmest of the three.</p>
+ </div>
+ <div>
+  <p class="label">B · Circles <span>— a graded row of circles, like personality-quiz sites</span></p>
+  <div class="frame b">
+   <div class="top"><span>Handling things</span><span>14 / 26</span></div>
+   <q>Handle tasks smoothly.</q>
+   <div class="scale">
+    <b style="width:46px;height:46px;border-color:var(--terra)"></b><b style="width:36px;height:36px;border-color:var(--terra)"></b><b style="width:26px;height:26px;border-color:var(--mute)"></b><b style="width:36px;height:36px;border-color:var(--blue);background:var(--blue)"></b><b style="width:46px;height:46px;border-color:var(--blue)"></b>
+   </div>
+   <div class="ends"><span>Very inaccurate</span><span>Very accurate</span></div>
+   <div class="dots"><i class="d"></i><i class="d"></i><i class="d"></i><i></i><i></i></div>
+  </div>
+  <p class="note">Quickest to answer and the most familiar "survey" feel. The weakness: the 4-point Rosenberg scale has no middle circle, so its row looks different from the others.</p>
+ </div>
+ <div>
+  <p class="label">C · Sections <span>— the four parts shown as chapters</span></p>
+  <div class="frame c">
+   <nav><div>Self-worth</div><div class="cur">Handling</div><div>Speaking up</div><div>Steadiness</div></nav>
+   <main>
+    <h3>Handling things</h3><p class="why">How sure you are you can get things done.</p>
+    <div class="row"><p>Complete tasks successfully.</p><div class="seg"><i></i><i></i><i></i><i class="on"></i><i></i></div></div>
+    <div class="row"><p>Excel in what I do.</p><div class="seg"><i></i><i></i><i class="on"></i><i></i><i></i></div></div>
+    <div class="row"><p>Handle tasks smoothly.</p><div class="seg"><i></i><i></i><i></i><i></i><i></i></div></div>
+   </main>
+  </div>
+  <p class="note">Shows one part at a time with a line on what it measures, so it teaches as you go. Denser, and less fun to share.</p>
+ </div>
+</div>
+</body>
+</html>
