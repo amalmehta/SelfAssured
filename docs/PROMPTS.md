@@ -36,3 +36,6 @@
 7. "make sure it tracks over time"
 
    Asked in the question widget: history in this browser only (with export/import), opt-in saving from the results screen, an overall line plus a table of parts, and push the checklist fix right away. Built `js/history.js` with tests, the history screen and the "since your last saved result" box; tested at phone width, in dark mode, and with a malformed import.
+
+8. "Yes, push"
+
