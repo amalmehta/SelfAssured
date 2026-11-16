@@ -34,6 +34,7 @@
   <symbol id="i-save" viewBox="0 0 24 24"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 19h14"/></symbol>
   <symbol id="i-redo" viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5M4 4v4.5h4.5"/></symbol>
   <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+  <symbol id="i-trend" viewBox="0 0 24 24"><path d="M4 18l5-6 4 3 7-9M15 6h5v5"/></symbol>
   <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></symbol>
 </svg>
 
@@ -52,8 +53,11 @@
     <h1>How self-assured are you?</h1>
     <p class="lede">22 short questions from two published scales, scored across four parts. About three minutes.</p>
     <ul class="parts-preview" id="parts-preview"></ul>
-    <button class="primary" id="start">Start <kbd>Enter</kbd></button>
-    <p class="quiet"><svg class="ic"><use href="#i-lock"/></svg> Your answers stay in this tab. Nothing is saved or sent.</p>
+    <div class="row center">
+      <button class="primary" id="start">Start <kbd>Enter</kbd></button>
+      <button class="ghost" id="open-history" hidden><svg class="ic"><use href="#i-trend"/></svg> Your history <span class="count" id="history-count"></span></button>
+    </div>
+    <p class="quiet"><svg class="ic"><use href="#i-lock"/></svg> Your answers stay in this tab and are never sent. Scores are kept only if you save them, and only in this browser.</p>
     <details class="fold">
       <summary>Where the questions come from</summary>
       <div id="sources-intro"></div>
@@ -95,10 +99,13 @@
     </div>
     <p class="lede" id="overall-note">The average of your four parts. It shows where you sit on these scales, not how you compare with other people.</p>
     <ul class="result-rows" id="rows"></ul>
+    <div class="since" id="since" hidden></div>
     <div class="row actions">
-      <button class="primary" id="save"><svg class="ic"><use href="#i-save"/></svg> Save image</button>
+      <button class="primary" id="save-history"><svg class="ic"><use href="#i-trend"/></svg> <span>Save to my history</span></button>
+      <button class="ghost" id="save"><svg class="ic"><use href="#i-save"/></svg> Save image</button>
       <button class="ghost" id="retake"><svg class="ic"><use href="#i-redo"/></svg> Retake</button>
     </div>
+    <p class="quiet small-note" id="save-note">Saving keeps the date and these five scores in this browser only, not your answers. You can delete them in Settings.</p>
     <details class="fold">
       <summary>How the scores are worked out</summary>
       <div class="method">
@@ -128,6 +135,23 @@
     </details>
     <p class="quiet care">This is a reflection tool, not a diagnosis. If a low score stings, that's worth talking over with someone you trust.</p>
   </section>
+
+  <!-- History -->
+  <section id="history" class="screen" hidden>
+    <p class="eyebrow">Your history</p>
+    <h2 class="serif">Over time</h2>
+    <p class="lede" id="history-lede"></p>
+    <figure class="trend" id="trend" aria-label="Overall score by date"></figure>
+    <div class="table-wrap"><table class="runs" id="runs"></table></div>
+    <p class="estimate"><span class="tag">Estimate</span> Changes under about 10 points are within the noise of these short scales, so they are marked “about the same”. Taking it more often than every few weeks mostly measures how well you remember the questions.</p>
+    <div class="row actions">
+      <button class="ghost" id="history-back"><svg class="ic"><use href="#i-back"/></svg> Back</button>
+      <button class="ghost" id="export-history"><svg class="ic"><use href="#i-save"/></svg> Export</button>
+      <label class="ghost" id="import-label"><input type="file" id="import-history" accept="application/json,.json" hidden> Import</label>
+    </div>
+    <p class="quiet" id="import-note" role="status"></p>
+    <p class="quiet small-note">History lives only in this browser. Export it to keep a copy or move it to another device; clearing site data deletes it.</p>
+  </section>
 </main>
 
 <a class="feedback-tab" id="feedback" href="https://github.com/amalmehta/SelfAssured/issues/new" target="_blank" rel="noopener"><svg class="ic"><use href="#i-chat"/></svg> Feedback</a>
@@ -153,8 +177,11 @@
     </fieldset>
     <div class="privacy">
       <h3>What's stored</h3>
-      <p>Only these two settings, in this browser's local storage. Your answers live in memory and are gone when you close the tab. No accounts, no analytics, no server, and no requests to anyone else: even the fonts are served from this site.</p>
-      <button type="button" class="ghost small" id="clear-settings">Delete saved settings</button>
+      <p>These two settings and, only if you press “Save to my history”, the date and five scores of each saved result, all in this browser's local storage. Your answers live in memory and are gone when you close the tab. No accounts, no analytics, no server, and no requests to anyone else: even the fonts are served from this site.</p>
+      <div class="row">
+        <button type="button" class="ghost small" id="clear-settings">Delete saved settings</button>
+        <button type="button" class="ghost small" id="clear-history">Delete history <span class="count" id="settings-history-count"></span></button>
+      </div>
     </div>
     <div class="row end"><button class="primary" value="close">Done</button></div>
   </form>

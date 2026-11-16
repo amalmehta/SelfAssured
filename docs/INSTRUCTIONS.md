@@ -16,7 +16,7 @@ Then open http://localhost:8743.
 npm test
 ```
 
-This runs Node's built-in test runner on `tests/scoring.test.mjs` (12 tests: item counts, the 5-point answers with a neutral middle, reverse keys, extremes, the steadiness flip, the overall average, missing answers, and the plain-words descriptions). It needs no npm install.
+This runs Node's built-in test runner on `tests/*.test.mjs`: 6 history tests (only scores are saved, ordering, blocked storage, the noise band, export/import, delete) and 12 scoring tests ( item counts, the 5-point answers with a neutral middle, reverse keys, extremes, the steadiness flip, the overall average, missing answers, and the plain-words descriptions). It needs no npm install.
 
 ## Use
 
@@ -24,8 +24,9 @@ This runs Node's built-in test runner on `tests/scoring.test.mjs` (12 tests: ite
 - **Answer:** click or tap an option, or press 1–5. It moves on by itself.
 - **Back:** press ← or click Back. Earlier answers are kept.
 - **Results:** open any part to see what it measures, what it doesn't, its reliability, and each statement next to your answer.
+- **Save to my history** keeps this result's date and scores in this browser. Next time, the results show what changed since then, and **Your history** (on the start screen) shows a line of your overall score and a table of every run. **Export** saves a file you can **Import** on another device.
 - **Save image** downloads a PNG of your result card. **Retake** starts over.
-- **Settings:** the gear icon or ⌘, (Ctrl+, on Windows/Linux). It covers theme and motion, and says what's stored.
+- **Settings:** the gear icon or ⌘, (Ctrl+, on Windows/Linux). It covers theme and motion, says what's stored, and can delete saved settings or history.
 
 ## Deploy (GitHub Pages)
 
@@ -53,8 +54,12 @@ What automated tests can't check. Walk through it on a real phone and a laptop.
 
 **Privacy and security**
 - [ ] DevTools → Network during a full run shows only same-origin requests.
-- [ ] DevTools → Application → Local Storage holds only `sa-settings` (theme and motion), and "Delete saved settings" clears it.
+- [ ] DevTools → Application → Local Storage holds only `sa-settings` (theme and motion) and, after saving, `sa-history` (dates and scores, no answers). "Delete saved settings" and "Delete history" each clear theirs.
 - [ ] No answers or scores appear in the URL at any point.
+
+**History**
+- [ ] Save two runs: the second shows "Since your last saved result" with sensible changes, and gaps under 10 read "about the same".
+- [ ] The history chart and table are readable on a phone, and Export then Import on another browser brings the runs across.
 
 **Live**
 - [ ] The GitHub Pages URL loads over HTTPS, and the Feedback link opens a new issue.

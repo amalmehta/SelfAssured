@@ -1,10 +1,11 @@
 # Self Assured
 
-A 3-minute survey of how self-assured you are, across four parts: self-worth, handling things, speaking up, and steadiness. It uses 22 items from two published, public-domain scales. Your answers never leave your browser.
+A 3-minute survey of how self-assured you are, across four parts: self-worth, handling things, speaking up, and steadiness. It uses 22 items from two published, public-domain scales. Save a result and it tracks how your scores change over time. Your answers never leave your browser, and saved scores stay in it.
 
 <p>
   <img src="docs/images/intro-light.jpg" width="49%" alt="Intro screen: 'How self-assured are you?' with the four parts">
   <img src="docs/images/results-dark.jpg" width="49%" alt="Results in dark mode: overall 70/100, part bars, one part opened to explain the score">
+  <img src="docs/images/history-light.jpg" width="60%" alt="History: overall score by date as a line, and a table of every saved run's four parts">
 </p>
 
 | Part | Scale | Items |

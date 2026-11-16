@@ -1,14 +1,16 @@
 # File Structure
 
 ```
-index.html            The whole page: intro, question, switch card, results, settings dialog, icon sprites
+index.html            The whole page: intro, question, switch card, results, history, settings dialog, icon sprites
 styles.css            Colour tokens (light and dark), self-hosted fonts, layout, motion
 js/
   items.js            The 22 items, word for word, with keying, answer labels and citations
   scoring.js          Pure scoring functions (no DOM), shared by the page and the tests
-  app.js              Screens, keyboard, transitions, result rendering, share image, settings
+  history.js          Saved scores over time: save, load, compare, export, import (no DOM)
+  app.js              Screens, keyboard, transitions, results, history chart, share image, settings
 tests/
   scoring.test.mjs    Unit tests for scoring (run with: npm test)
+  history.test.mjs    Unit tests for saved history
 assets/
   icon.svg            The app icon (also the favicon)
   icon-180.png        Apple touch icon

@@ -32,3 +32,7 @@
 6. "walk through the checklist"
 
    Checked the automatable items in the browser and asked about feel, Reduce Motion, phone and wording in the question widget; all passed. Fixed a stale "0 and 3 for Rosenberg" label in the scoring explanation.
+
+7. "make sure it tracks over time"
+
+   Asked in the question widget: history in this browser only (with export/import), opt-in saving from the results screen, an overall line plus a table of parts, and push the checklist fix right away. Built `js/history.js` with tests, the history screen and the "since your last saved result" box; tested at phone width, in dark mode, and with a malformed import.

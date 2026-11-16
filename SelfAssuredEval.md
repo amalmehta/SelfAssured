@@ -457,6 +457,7 @@ Decided with Amal on 2026-11-15.
   - Total: 22 items, about 3 minutes. The General Self-Efficacy Scale was dropped because its terms only cover research use.
 - Part score (0–100): (mean item value after reverse-keying − scale minimum) / (scale maximum − scale minimum) × 100.
 - Steadiness: 100 − Vulnerability score.
+- Tracking over time (added 2026-11-15): opt-in per run, stored only in this browser (date and five scores, never answers), with export/import to move devices. Changes under 10 points are shown as "about the same". Cross-device sync is deferred.
 - Overall: the average of the four part scores. This is our choice, not a published scale, and it is labelled "not compared to other people".
 - Done when:
   - All 22 items appear word for word, with citations.
@@ -492,6 +493,7 @@ CHANGELOG:
 - 2026-11-15 — created
 - 2026-11-15 — filled in DEFINITIONS AND DEFERRED and OPEN QUESTIONS / ASSUMPTIONS after the first round of questions
 - 2026-11-15 — published to GitHub (amalmehta/SelfAssured) and GitHub Pages
+- 2026-11-15 — added tracking over time: opt-in saved scores in this browser, change since last time, history chart and table, export/import
 - 2026-11-15 — walked through the manual review checklist; all items pass
 - 2026-11-15 — added a neutral middle to the Rosenberg answers (now 5 points, like IPIP)
 - 2026-11-15 — built v1: a static survey site (22 items, four parts), scoring tests, docs; fonts self-hosted
