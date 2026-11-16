@@ -492,6 +492,7 @@ CHANGELOG:
 - 2026-11-15 — created
 - 2026-11-15 — filled in DEFINITIONS AND DEFERRED and OPEN QUESTIONS / ASSUMPTIONS after the first round of questions
 - 2026-11-15 — published to GitHub (amalmehta/SelfAssured) and GitHub Pages
+- 2026-11-15 — walked through the manual review checklist; all items pass
 - 2026-11-15 — added a neutral middle to the Rosenberg answers (now 5 points, like IPIP)
 - 2026-11-15 — built v1: a static survey site (22 items, four parts), scoring tests, docs; fonts self-hosted
 - 2026-09-15 — added meta-instruction: built-out applications include a small feedback tab

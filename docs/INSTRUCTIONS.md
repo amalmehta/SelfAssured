@@ -58,3 +58,7 @@ What automated tests can't check. Walk through it on a real phone and a laptop.
 
 **Live**
 - [ ] The GitHub Pages URL loads over HTTPS, and the Feedback link opens a new issue.
+
+### Last review: 2026-11-15
+
+All 14 items pass. Feel, Reduce Motion, phone reading, home-screen icon and wording were checked by Amal. Privacy, storage, URL, HTTPS, Feedback link, dark-mode equation and 375 px layout were checked in the browser. The review caught one stale label in "How the scores are worked out" (Rosenberg range 0–3, now 0–4), which was fixed.

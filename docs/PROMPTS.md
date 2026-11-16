@@ -28,3 +28,7 @@
    Only the 10 Rosenberg questions lacked a neutral; the 12 IPIP questions already had 5 points. After checking studies of answer formats (Donnellan & Rakhshani 2023 favour 5 points for Rosenberg; 4 to 7 points give about the same reliability), the choice offered was 5 points for all or 7 points for all. Amal picked 5 points for all, so Rosenberg gained "Neither agree nor disagree".
 
 5. "Yes, push"
+
+6. "walk through the checklist"
+
+   Checked the automatable items in the browser and asked about feel, Reduce Motion, phone and wording in the question widget; all passed. Fixed a stale "0 and 3 for Rosenberg" label in the scoring explanation.
