@@ -24,3 +24,7 @@ Scores run from 0 to 100 and show where you sit on each scale. They are **not** 
 - [Prompt log](docs/PROMPTS.md)
 
 **Sources:** Rosenberg (1965), via [UMD Sociology](https://socy.umd.edu/about-us/using-rosenberg-self-esteem-scale); Johnson (2014), *J. Research in Personality* 51, 78–89, via [ipip.ori.org](https://ipip.ori.org/30FacetNEO-PI-RItems.htm). Fonts: Inter and Newsreader, under the SIL Open Font License.
+
+## How it was built
+
+How this was built and how it works, with diagrams: [docs/HOW-IT-WAS-BUILT.md](docs/HOW-IT-WAS-BUILT.md)
