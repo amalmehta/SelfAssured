@@ -6,7 +6,7 @@ Self Assured is a one-page website. It asks 22 questions and shows how self-assu
 ## Build history
 
 ```mermaid
-flowchart LR
+flowchart TD
   I["Idea: a survey of self-assuredness, styled like other survey sites"]
   D1["Decisions: four bars plus overall, GitHub Pages, Editorial look, native answer scales, credibility is the point, done criteria confirmed"]
   M1["First site, 22 items - 2026-11-15"]
